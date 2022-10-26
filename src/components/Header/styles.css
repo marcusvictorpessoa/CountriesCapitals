@@ -6,7 +6,7 @@
     background-color: #3ec9a7;
 }
 
-span {
+.logo {
     cursor: pointer;
     font-size: 2em;
     font-weight: 700;
@@ -15,6 +15,6 @@ span {
     color: #fff;
 }
 
-span:hover {
+.logo:hover {
     font-size: 2.1em;
 }

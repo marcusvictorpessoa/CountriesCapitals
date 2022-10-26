@@ -9,8 +9,10 @@ function App() {
   let dados = {
     Brasil: "Brasilia",
     Bolivia: "La paz",
-    Ingaleterra: "Londres",
-    Argentina: "Buenos aires"
+    Inglaterra: "Londres",
+    Argentina: "Buenos aires",
+    Alemanha: "Berlim",
+    Peru: "Lima"
   }
 
   return (

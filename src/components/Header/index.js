@@ -4,7 +4,7 @@ import "./styles.css";
 export default function Header() {
     return (
         <header className="header">
-            <span>
+            <span className="logo">
                 Countries and Capitals
             </span>
         </header>
