@@ -25,13 +25,9 @@ export default function CountriesCapitals({ countriescapitalslist }) {
 
     function checkAnswers(ev) {
         let option = ev.target.innerHTML;
-        //console.log(option);
         if (!answer.option1) {
-            console.log('option1', answer);
             setAnswer({ ...answer, option1: option });
-
         } else {
-            console.log('option2', answer);
             setAnswer({ ...answer, option2: option });
         }
         ev.target.style.backgroundColor = "#fef0a5";
@@ -44,16 +40,57 @@ export default function CountriesCapitals({ countriescapitalslist }) {
 
     useEffect(() => {
         if (answer.option1 && answer.option2) {
-            console.log("verificando: ", data.hasOwnProperty(answer.option1), data.hasOwnProperty(answer.option2))
-            if (data.hasOwnProperty(answer.option1) || data.hasOwnProperty(answer.option2)) {
-                console.log('kj')
-                //#61d4b0
+            if (!!(data.hasOwnProperty(answer.option1) ^ data.hasOwnProperty(answer.option2))) {
+                const option1 = Object.getOwnPropertyDescriptor(data, answer.option1);
+                const option2 = Object.getOwnPropertyDescriptor(data, answer.option2);
+                if (!!option1?.configurable) {
+                    if (option1.value === answer.option2) {
+                        divRef.current.childNodes.forEach((el) => {
+                            if (el.style.backgroundColor !== 'rgb(255, 255, 255)') {
+                                el.style.backgroundColor = "#61d4b0";
+                            }
+                        })
+                        setTimeout(() => setCountcaplist(countcaplist.filter((el) => {
+                            if (!(answer.option1 !== el ^ answer.option2 !== el)) {
+                                return el
+                            }
+                        })), 700);
+                    } else {
+                        divRef.current.childNodes.forEach((el) => {
+                            if (el.style.backgroundColor !== 'rgb(255, 255, 255)') {
+                                el.style.backgroundColor = "#c91842";
+                            }
+
+                        })
+                    }
+                } else {
+                    if (option2.value === answer.option1) {
+                        divRef.current.childNodes.forEach((el) => {
+                            if (el.style.backgroundColor !== 'rgb(255, 255, 255)') {
+                                el.style.backgroundColor = "#61d4b0";
+                            }
+                        })
+                        setTimeout(() => setCountcaplist(countcaplist.filter((el) => {
+                            if (!(answer.option1 !== el ^ answer.option2 !== el)) {
+                                return el
+                            }
+                        })), 700);
+                    } else {
+                        divRef.current.childNodes.forEach((el) => {
+                            if (el.style.backgroundColor !== 'rgb(255, 255, 255)') {
+                                el.style.backgroundColor = "#c91842";
+                            }
+
+                        })
+                    }
+                }
+
             } else {
                 divRef.current.childNodes.forEach((el) => {
                     if (el.style.backgroundColor !== 'rgb(255, 255, 255)') {
                         el.style.backgroundColor = "#c91842";
                     }
-    
+
                 })
             }
             setAnswer({ option1: '', option2: '' });

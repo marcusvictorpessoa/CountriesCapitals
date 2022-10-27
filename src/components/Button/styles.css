@@ -1,0 +1,13 @@
+.button {
+    align-self: center;
+    cursor: pointer;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 1em;
+    font-size: 16pt;
+    font-weight: 500;
+}

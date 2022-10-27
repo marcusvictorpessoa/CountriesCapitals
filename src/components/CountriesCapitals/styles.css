@@ -16,4 +16,6 @@
     background-color: aliceblue;
     border-radius: 1em;
     transition: .3s ease-in-out;
+    font-size: 16pt;
+    font-weight: 500;
 }

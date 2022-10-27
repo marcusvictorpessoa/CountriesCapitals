@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import Button from "./components/Button";
 import Container from "./components/Container";
 import CountriesCapitals from "./components/CountriesCapitals";
 import Header from "./components/Header";
@@ -7,19 +8,29 @@ import Header from "./components/Header";
 function App() {
 
   let dados = {
-    Brasil: "Brasilia",
-    Bolivia: "La paz",
+    Brasil: "Brasília",
     Inglaterra: "Londres",
-    Argentina: "Buenos aires",
+    Argentina: "Buenos Aires",
     Alemanha: "Berlim",
-    Peru: "Lima"
+    Peru: "Lima",
+    Canada: "Ottawa",
+    Chile: "Santiago"
+  }
+
+  const [data, setData] = useState({});
+
+  function playGame() {
+    setData(dados)
   }
 
   return (
     <>
       <Header />
       <Container>
-        <CountriesCapitals countriescapitalslist={dados} />
+        {Object.entries(data).length !== 0 ?
+          <CountriesCapitals countriescapitalslist={data} /> :
+          <Button content={'Start game'} click={() => playGame()}
+          />}
       </Container>
     </>
   );
