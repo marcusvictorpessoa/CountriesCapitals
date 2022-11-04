@@ -6,8 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aliceblue;
+    background-color: #d33649;
+    color: #fff;
+    border-style: none;
     border-radius: 1em;
-    font-size: 16pt;
+    font-size: 18pt;
     font-weight: 500;
+    margin: 0 auto;
+    margin-top: 15%;
+    transition: .3s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 0 5px 5px rgb(0 0 0 / 0.2);
 }

@@ -19,3 +19,15 @@
     font-size: 16pt;
     font-weight: 500;
 }
+
+.congrulations {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 15%;
+    color: #fff;
+    font-size: 18pt;
+    font-weight: 500;
+    border-radius: 50%;
+    background-color: #d33649;
+    padding: 0.7em;
+}

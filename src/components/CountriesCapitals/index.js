@@ -117,6 +117,7 @@ export default function CountriesCapitals({ countriescapitalslist }) {
                     </span>
                 )
             })}
+            {countcaplist.length === 0 && <span className="congrulations">Congrulations!!</span>}
         </div>
     );
 }
